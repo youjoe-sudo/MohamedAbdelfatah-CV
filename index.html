@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Abdelfatah - CV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            background: url('https://images.unsplash.com/photo-1557683316-973673baf926') no-repeat center center/cover;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        /* ===== تأثير الزجاج على كل المحتوى ===== */
+        main {
+            background: rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
+        /* ===== NAVBAR GLASS ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(6px);
+            padding: 25px 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+        /* ===== HEADER ===== */
+        header {
+            text-align: center;
+            padding: 100px 20px 30px;
+        }
+        img {
+            height: 150px;
+            width: 150px;
+            margin: 10px;
+            border: 3px solid #ffd700;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+            transition: transform 0.3s ease;
+        }
+        img:hover {
+            transform: scale(1.05);
+        }
+        h1 {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            padding: 10px 20px;
+            margin-top: 15px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+        }
+        section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 900px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+        }
+        h2 {
+            border-bottom: 2px solid #ffd700;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        ul li::before {
+            content: "✅ ";
+            color: #ffd700;
+        }
+        .location {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 15px;
+            margin-top: 10px;
+            border-radius: 8px;
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(10px);
+            transition: background-color 0.3s ease;
+        }
+        .location:hover {
+            background-color: #ffcc00;
+            color: #000;
+        }
+        /* ===== SOCIAL ICONS ===== */
+        .social-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .social-links a {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            color: white;
+            font-size: 26px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        .social-links a span {
+            position: absolute;
+            left: 60px;
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateX(20px);
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        .social-links a:hover {
+            width: 180px;
+            border-radius: 30px;
+            justify-content: flex-start;
+            padding-left: 20px;
+        }
+        .social-links a:hover span {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .whatsapp { background-color: #25D366; }
+        .telegram { background-color: #0088cc; }
+        .linkedin { background-color: #106996; }
+        .facebook { background-color: #1877F2; }
+        .instagram {
+            background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+        }
+        /* From Uiverse.io by Nawsome */ 
+.wheel-and-hamster {
+  --dur: 1s;
+  position: relative;
+  width: 12em;
+  height: 12em;
+  font-size: 14px;
+}
+
+.wheel,
+.hamster,
+.hamster div,
+.spoke {
+  position: absolute;
+}
+
+.wheel,
+.spoke {
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.wheel {
+  background: radial-gradient(100% 100% at center,hsla(0,0%,60%,0) 47.8%,hsl(0,0%,60%) 48%);
+  z-index: 2;
+}
+
+.hamster {
+  animation: hamster var(--dur) ease-in-out infinite;
+  top: 50%;
+  left: calc(50% - 3.5em);
+  width: 7em;
+  height: 3.75em;
+  transform: rotate(4deg) translate(-0.8em,1.85em);
+  transform-origin: 50% 0;
+  z-index: 1;
+}
+
+.hamster__head {
+  animation: hamsterHead var(--dur) ease-in-out infinite;
+  background: hsl(30,90%,55%);
+  border-radius: 70% 30% 0 100% / 40% 25% 25% 60%;
+  box-shadow: 0 -0.25em 0 hsl(30,90%,80%) inset,
+		0.75em -1.55em 0 hsl(30,90%,90%) inset;
+  top: 0;
+  left: -2em;
+  width: 2.75em;
+  height: 2.5em;
+  transform-origin: 100% 50%;
+}
+
+.hamster__ear {
+  animation: hamsterEar var(--dur) ease-in-out infinite;
+  background: hsl(0,90%,85%);
+  border-radius: 50%;
+  box-shadow: -0.25em 0 hsl(30,90%,55%) inset;
+  top: -0.25em;
+  right: -0.25em;
+  width: 0.75em;
+  height: 0.75em;
+  transform-origin: 50% 75%;
+}
+
+.hamster__eye {
+  animation: hamsterEye var(--dur) linear infinite;
+  background-color: hsl(0,0%,0%);
+  border-radius: 50%;
+  top: 0.375em;
+  left: 1.25em;
+  width: 0.5em;
+  height: 0.5em;
+}
+
+.hamster__nose {
+  background: hsl(0,90%,75%);
+  border-radius: 35% 65% 85% 15% / 70% 50% 50% 30%;
+  top: 0.75em;
+  left: 0;
+  width: 0.2em;
+  height: 0.25em;
+}
+
+.hamster__body {
+  animation: hamsterBody var(--dur) ease-in-out infinite;
+  background: hsl(30,90%,90%);
+  border-radius: 50% 30% 50% 30% / 15% 60% 40% 40%;
+  box-shadow: 0.1em 0.75em 0 hsl(30,90%,55%) inset,
+		0.15em -0.5em 0 hsl(30,90%,80%) inset;
+  top: 0.25em;
+  left: 2em;
+  width: 4.5em;
+  height: 3em;
+  transform-origin: 17% 50%;
+  transform-style: preserve-3d;
+}
+
+.hamster__limb--fr,
+.hamster__limb--fl {
+  clip-path: polygon(0 0,100% 0,70% 80%,60% 100%,0% 100%,40% 80%);
+  top: 2em;
+  left: 0.5em;
+  width: 1em;
+  height: 1.5em;
+  transform-origin: 50% 0;
+}
+
+.hamster__limb--fr {
+  animation: hamsterFRLimb var(--dur) linear infinite;
+  background: linear-gradient(hsl(30,90%,80%) 80%,hsl(0,90%,75%) 80%);
+  transform: rotate(15deg) translateZ(-1px);
+}
+
+.hamster__limb--fl {
+  animation: hamsterFLLimb var(--dur) linear infinite;
+  background: linear-gradient(hsl(30,90%,90%) 80%,hsl(0,90%,85%) 80%);
+  transform: rotate(15deg);
+}
+
+.hamster__limb--br,
+.hamster__limb--bl {
+  border-radius: 0.75em 0.75em 0 0;
+  clip-path: polygon(0 0,100% 0,100% 30%,70% 90%,70% 100%,30% 100%,40% 90%,0% 30%);
+  top: 1em;
+  left: 2.8em;
+  width: 1.5em;
+  height: 2.5em;
+  transform-origin: 50% 30%;
+}
+
+.hamster__limb--br {
+  animation: hamsterBRLimb var(--dur) linear infinite;
+  background: linear-gradient(hsl(30,90%,80%) 90%,hsl(0,90%,75%) 90%);
+  transform: rotate(-25deg) translateZ(-1px);
+}
+
+.hamster__limb--bl {
+  animation: hamsterBLLimb var(--dur) linear infinite;
+  background: linear-gradient(hsl(30,90%,90%) 90%,hsl(0,90%,85%) 90%);
+  transform: rotate(-25deg);
+}
+
+.hamster__tail {
+  animation: hamsterTail var(--dur) linear infinite;
+  background: hsl(0,90%,85%);
+  border-radius: 0.25em 50% 50% 0.25em;
+  box-shadow: 0 -0.2em 0 hsl(0,90%,75%) inset;
+  top: 1.5em;
+  right: -0.5em;
+  width: 1em;
+  height: 0.5em;
+  transform: rotate(30deg) translateZ(-1px);
+  transform-origin: 0.25em 0.25em;
+}
+
+.spoke {
+  animation: spoke var(--dur) linear infinite;
+  background: radial-gradient(100% 100% at center,hsl(0,0%,60%) 4.8%,hsla(0,0%,60%,0) 5%),
+		linear-gradient(hsla(0,0%,55%,0) 46.9%,hsl(0,0%,65%) 47% 52.9%,hsla(0,0%,65%,0) 53%) 50% 50% / 99% 99% no-repeat;
+}
+
+/* Animations */
+@keyframes hamster {
+  from, to {
+    transform: rotate(4deg) translate(-0.8em,1.85em);
+  }
+
+  50% {
+    transform: rotate(0) translate(-0.8em,1.85em);
+  }
+}
+
+@keyframes hamsterHead {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(0);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes hamsterEye {
+  from, 90%, to {
+    transform: scaleY(1);
+  }
+
+  95% {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes hamsterEar {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(0);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(12deg);
+  }
+}
+
+@keyframes hamsterBody {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(0);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(-2deg);
+  }
+}
+
+@keyframes hamsterFRLimb {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(50deg) translateZ(-1px);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(-30deg) translateZ(-1px);
+  }
+}
+
+@keyframes hamsterFLLimb {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(-30deg);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(50deg);
+  }
+}
+
+@keyframes hamsterBRLimb {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(-60deg) translateZ(-1px);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(20deg) translateZ(-1px);
+  }
+}
+
+@keyframes hamsterBLLimb {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(20deg);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(-60deg);
+  }
+}
+
+@keyframes hamsterTail {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(30deg) translateZ(-1px);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(10deg) translateZ(-1px);
+  }
+}
+
+@keyframes spoke {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(-1turn);
+  }
+}
+/* From Uiverse.io by Saad3092003 */ 
+button {
+  font-family: inherit;
+  font-size: 18px;
+  background: linear-gradient(to bottom, #4dc7d9 0%,#66a6ff 100%);
+  color: white;
+  padding: 0.8em 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+  padding: 0em;
+  background: linear-gradient(to bottom, #5bd9ec 0%,#97c3ff 100%);
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button span {
+  display: block;
+  margin-left: 0.4em;
+  transition: all 0.3s;
+}
+
+button:hover span {
+  scale: 0;
+  font-size: 0%;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+button svg {
+  width: 18px;
+  height: 18px;
+  fill: white;
+  transition: all 0.3s;
+}
+
+button .svg-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s;
+}
+
+button:hover .svg-wrapper {
+  background-color: rgba(43, 169, 228, 0.897);
+  width: 54px;
+  height: 54px;
+}
+
+button:hover svg {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+  transform: rotate(45deg);
+}
+
+
+
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- محتوى زجاجي -->
+    <main>
+        <header>
+            <img src="tiktok_video_bZGWg.jpeg" alt="Mohamed Abdelfatah">
+            <h1>Mohamed Abdelfatah</h1>
+            <p>💻 Junior Programmer | 🌍 Egypt</p>
+            <a href="https://maps.app.goo.gl/aPALRQXjfTyMYEvS8" class="location">📍 My Location</a>
+        </header>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                I'm <b>Mohamed Abdelfatah</b>, a passionate junior programmer who loves learning new technologies.
+                I have a solid foundation in front-end development and am expanding my skills into back-end programming.
+                My dream is to become a full-stack developer and contribute to real-world projects that make an impact.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML5, CSS3, JavaScript</li>
+                <li>Python (Beginner – Intermediate)</li>
+                <li>Responsive Web Design</li>
+                <li>Basic Git & GitHub</li>
+                <li>Problem Solving & Debugging</li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <ul>
+                <li>Personal Portfolio Website</li>
+                <li>Interactive To-Do List (JavaScript)</li>
+                <li>Basic Calculator (HTML, CSS, JS)</li>
+                <li>Simple Python Data Analysis Script</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <ul>
+                <li>Bachelor's in Computer Science (Ongoing)</li>
+                <li>Front-End Development Course – SoloLearn</li>
+                <li>Python Basics – SoloLearn</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Languages</h2>
+            <ul>
+                <li>Arabic – Native</li>
+                <li>English – Intermediate</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Certificates & Achievements</h2>
+            <ul>
+                <li>Certificate in Responsive Web Design – freeCodeCamp</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Interests</h2>
+            <ul>
+                <li>Problem Solving & Coding Challenges</li>
+                <li>UI/UX Design</li>
+                <li>Reading Tech Blogs</li>
+            </ul>
+        </section>
+
+        <section style="text-align:center; margin-top:30px;">
+            <a href="Mohamed_Abdelfatah_CV.docx" download class="location" style="background-color:#ffcc00; color:#000; font-weight:bold;">
+                📄 Download CV
+            </a>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: <b>mohamed.a.a.fatah2010@gmail.com</b></p>
+            <p>Phone: <b>+20 128 553 6282</b></p>
+            <div class="social-links">
+                <a href="https://wa.me/201285536282" class="whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="https://t.me/201285536282" class="telegram">
+                    <i class="fab fa-telegram"></i>
+                    <span>Telegram</span>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61572685060484" class="facebook">
+                    <i class="fab fa-facebook-f"></i>
+                    <span>Facebook</span>
+                </a>
+                <a href="https://www.instagram.com/0mohamedabdelfatah0/" class="instagram">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                    <a href="https://www.linkedin.com/in/mohamed-abdelfatah-539987380/" class="linkedin">
+                    <i class="fab fa-linkedin"></i>
+                    <span>Linkedin</span>
+                </a>
+            </div>
+
+<form id="contactForm">
+  <input type="text" name="name" placeholder="Your Name" required
+    style="padding:10px; border-radius:8px; border:none; margin-top:10px; width:250px; max-width:90%;">
+  
+  <input type="email" name="email" placeholder="Your Email" required
+    style="padding:10px; border-radius:8px; border:none; margin-top:10px; width:250px; max-width:90%;">
+  
+  <input type="text" name="title" placeholder="Subject" required
+    style="padding:10px; border-radius:8px; border:none; margin-top:10px; width:250px; max-width:90%;">
+  
+  <input type="text" name="message" placeholder="Your Message" required
+    style="padding:10px; border-radius:8px; border:none; margin-top:10px;margin-bottom: 12px; width:250px; height:100px; max-width:90%;"></input>
+  
+<!-- From Uiverse.io by Saad3092003 --> 
+<button id="sendBtn" type="submit">
+  <div class="svg-wrapper-1">
+    <div class="svg-wrapper">
+      <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z" fill="currentColor"></path>
+      </svg>
+    </div>
+  </div>
+  <span>Send</span>
+</button>
+
+</form>
+<div id="loading" style="display:none; text-align:center; margin-top:10px;">
+<!-- From Uiverse.io by Nawsome --> 
+<div aria-label="Orange and tan hamster running in a metal wheel" role="img" class="wheel-and-hamster">
+	<div class="wheel"></div>
+	<div class="hamster">
+		<div class="hamster__body">
+			<div class="hamster__head">
+				<div class="hamster__ear"></div>
+				<div class="hamster__eye"></div>
+				<div class="hamster__nose"></div>
+			</div>
+			<div class="hamster__limb hamster__limb--fr"></div>
+			<div class="hamster__limb hamster__limb--fl"></div>
+			<div class="hamster__limb hamster__limb--br"></div>
+			<div class="hamster__limb hamster__limb--bl"></div>
+			<div class="hamster__tail"></div>
+		</div>
+	</div>
+	<div class="spoke"></div>
+</div>
+</div>
+
+        </section>
+    </main>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function(){
+     emailjs.init("LwT-pIn1umVaTAWUE"); // غيرها بال Public Key بتاعك
+  })();
+
+  document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+      const form = document.getElementById("contactForm");
+  const loading = document.getElementById("loading");
+  const sendBtn = document.getElementById("sendBtn");
+    loading.style.display = "block";
+    sendBtn.disabled = true;
+    sendBtn.innerText = "Sending...";
+    emailjs.sendForm("service_olbdrob", "template_w2s877x", this)
+      .then(() => {
+        alert("✅ Message Sent Successfully!");
+      })
+      .catch((err) => {
+        alert("❌ Failed to send: " + JSON.stringify(err));
+      })
+      .finally(() => {
+        // إخفاء اللودينج بعد الإرسال
+        loading.style.display = "none";
+        sendBtn.disabled = false;
+        form.reset();
+      });
+  });
+</script>
+<footer>
+    <p style="text-align:center; padding:15px; background:rgba(0,0,0,0.4); margin:0; box-shadow:0 -2px 10px rgba(0,0,0,0.5);">
+        &copy; 2025 Mohamed Abdelfatah. All rights reserved.
+    </p>
+</footer>
+</body>
+</html>
