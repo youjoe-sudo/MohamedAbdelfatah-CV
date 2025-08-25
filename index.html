@@ -644,7 +644,7 @@ button:hover svg {
   <input type="text" name="message" placeholder="Your Message" required
     style="padding:10px; border-radius:8px; border:none; margin-top:10px;margin-bottom: 12px; width:250px; height:100px; max-width:90%;"></input>
   
-<!-- From Uiverse.io by Saad3092003 --> 
+<!-- زرار الإرسال -->
 <button id="sendBtn" type="submit">
   <div class="svg-wrapper-1">
     <div class="svg-wrapper">
@@ -654,63 +654,72 @@ button:hover svg {
       </svg>
     </div>
   </div>
-  <span>Send</span>
+  <span id="btnText">Send</span> <!-- النص اللي هيتغير -->
 </button>
 
 </form>
+
+<!-- اللودينج -->
 <div id="loading" style="display:none; text-align:center; margin-top:10px;">
-<!-- From Uiverse.io by Nawsome --> 
-<div aria-label="Orange and tan hamster running in a metal wheel" role="img" class="wheel-and-hamster">
-	<div class="wheel"></div>
-	<div class="hamster">
-		<div class="hamster__body">
-			<div class="hamster__head">
-				<div class="hamster__ear"></div>
-				<div class="hamster__eye"></div>
-				<div class="hamster__nose"></div>
-			</div>
-			<div class="hamster__limb hamster__limb--fr"></div>
-			<div class="hamster__limb hamster__limb--fl"></div>
-			<div class="hamster__limb hamster__limb--br"></div>
-			<div class="hamster__limb hamster__limb--bl"></div>
-			<div class="hamster__tail"></div>
-		</div>
-	</div>
-	<div class="spoke"></div>
-</div>
+  <div aria-label="Orange and tan hamster running in a metal wheel" role="img" class="wheel-and-hamster">
+    <div class="wheel"></div>
+    <div class="hamster">
+      <div class="hamster__body">
+        <div class="hamster__head">
+          <div class="hamster__ear"></div>
+          <div class="hamster__eye"></div>
+          <div class="hamster__nose"></div>
+        </div>
+        <div class="hamster__limb hamster__limb--fr"></div>
+        <div class="hamster__limb hamster__limb--fl"></div>
+        <div class="hamster__limb hamster__limb--br"></div>
+        <div class="hamster__limb hamster__limb--bl"></div>
+        <div class="hamster__tail"></div>
+      </div>
+    </div>
+    <div class="spoke"></div>
+  </div>
 </div>
 
-        </section>
-    </main>
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
   (function(){
-     emailjs.init("LwT-pIn1umVaTAWUE"); // غيرها بال Public Key بتاعك
+     emailjs.init("LwT-pIn1umVaTAWUE"); // Public Key
   })();
 
   document.getElementById("contactForm").addEventListener("submit", function(event) {
     event.preventDefault();
-      const form = document.getElementById("contactForm");
-  const loading = document.getElementById("loading");
-  const sendBtn = document.getElementById("sendBtn");
+
+    const form = document.getElementById("contactForm");
+    const loading = document.getElementById("loading");
+    const sendBtn = document.getElementById("sendBtn");
+    const btnText = document.getElementById("btnText");
+
+    // إظهار اللودينج وتعطيل الزرار
     loading.style.display = "block";
     sendBtn.disabled = true;
-    sendBtn.innerText = "Sending...";
+    btnText.innerText = "Sending...";
+
     emailjs.sendForm("service_olbdrob", "template_w2s877x", this)
       .then(() => {
-        alert("✅ Message Sent Successfully!");
+        btnText.innerText = "Sent ✅";
       })
       .catch((err) => {
-        alert("❌ Failed to send: " + JSON.stringify(err));
+        btnText.innerText = "Failed ❌";
+        console.error(err);
       })
       .finally(() => {
         // إخفاء اللودينج بعد الإرسال
         loading.style.display = "none";
         sendBtn.disabled = false;
         form.reset();
+
+        // رجّع النص الأصلي بعد ثانيتين
+        setTimeout(() => btnText.innerText = "Send", 2000);
       });
   });
 </script>
+
 <footer>
     <p style="text-align:center; padding:15px; background:rgba(0,0,0,0.4); margin:0; box-shadow:0 -2px 10px rgba(0,0,0,0.5);">
         &copy; 2025 Mohamed Abdelfatah. All rights reserved.
@@ -718,3 +727,4 @@ button:hover svg {
 </footer>
 </body>
 </html>
+
